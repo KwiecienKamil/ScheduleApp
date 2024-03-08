@@ -1,0 +1,19 @@
+.weeklyReminders {
+    margin-top: 6rem;
+}
+.weeklyReminders-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    h2 {
+        font-size: 1.1rem;
+        font-weight: 400;
+    }
+    a {
+        text-decoration: none;
+        font-size: .9rem;
+        color: $primaryText;
+        font-weight: 600;
+    }
+}
