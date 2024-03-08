@@ -1,0 +1,16 @@
+.dashboard-logo {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.dashboard-logo-icon {
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    color: $primary;
+}
+.dashboard-logo-name {
+    color: black;
+    font-size: 1.4rem;
+}

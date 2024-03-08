@@ -1,24 +1,28 @@
 import React, { useState } from 'react'
 import {getMonth} from './utils/currentMonth'
+import Day from './components/Day';
+import '../src/styles/App.scss'
+import Sidebar from './components/Sidebar';
 
 function App() {
-  const [currentMonth, setCurrentMonth] = useState(getMonth())
+  const [currentMonth, setCurrentMonth] = useState(getMonth());
 
-  console.log(currentMonth);
-  
-  
   return (
     <>
-    {currentMonth.map((row, i) => (
+    <main>
+      <div className="dashboard">
+        <Sidebar />
+      </div>
+    </main>
+    {/* {currentMonth.map((row, i) => (
         <React.Fragment key={i}>
+          <div className="calendar" key={i}>
           {row.map((day, idx) => (
-            <div key={idx}>
-              {day.format()}
-            </div>
+             <Day day={day} rowIdx={i} key={idx}/>
             ))}
+            </div>
         </React.Fragment>
-
-    ))}
+    ))} */}
     </>
   )
 }
