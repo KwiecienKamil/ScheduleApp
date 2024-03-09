@@ -1,14 +1,18 @@
 type MainTaskProps = {
     icon: string,
     title: string,
-    hour: string
+    hour: string,
+    description: string;
 }
-const MainTask = ({icon, title, hour}:MainTaskProps) => {
+const MainTask = ({icon, title, hour, description}:MainTaskProps) => {
   return (
     <div className="mainTasks-wrapper">
     <div className="mainTask">
         <span>{icon}</span>
-        <h6>{title}</h6>
+        <div className="mainTasks-center">
+          <h6>{title}</h6>
+          <p>{description}</p>
+        </div>
         <p>{hour}</p>
     </div>
     </div>
