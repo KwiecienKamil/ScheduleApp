@@ -11,8 +11,11 @@
     overflow: hidden;
     font-family: "Manrope", sans-serif;
     .dashboard-sidebar {
-        width: 30%;
         height: 100%;
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         background-color: $sidebar;
         padding: 3rem;
     }

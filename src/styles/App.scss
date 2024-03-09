@@ -1,5 +1,6 @@
 @import './variables';
 @import './dashboard';
+@import './calendar';
 
 * {
     padding: 0;
@@ -20,18 +21,3 @@ main {
     position: relative;
 }
 
-
-.calendar {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-.singleDay {
-    border: 1px solid gray;
-    color: $text;
-}
-
-.currentDay {
-    padding: 3px;
-    background-color: $primary;
-}

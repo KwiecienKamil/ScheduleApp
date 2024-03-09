@@ -1,5 +1,5 @@
 .weeklyReminders {
-    margin-top: 6rem;
+   margin-top: auto;
 }
 .weeklyReminders-header {
     display: flex;
@@ -16,4 +16,38 @@
         color: $primaryText;
         font-weight: 600;
     }
+}
+.weekly-reminders-task {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 1rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    &:hover {
+        background-color: $primary;
+        transition: .3s ease-in;
+    }
+    .weekly-reminders-task-icon {
+        position: relative;
+        width: 15%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            background-color: $primary;
+            border-radius: 40px;
+            font-size: 1.4rem;
+        }
+    }
+}
+#addWeeklyTask {
+    margin-top: 1rem;
 }
