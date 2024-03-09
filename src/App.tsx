@@ -4,6 +4,7 @@ import Day from './components/Day';
 import '../src/styles/App.scss'
 import Sidebar from './components/Sidebar';
 import Calendar from './components/Calendar';
+import MainTasks from './components/MainTasks';
 
 function App() {
 
@@ -12,7 +13,7 @@ function App() {
     <main>
       <div className="dashboard">
         <Sidebar />
-        
+        <MainTasks />
       </div>
     </main>
     </>

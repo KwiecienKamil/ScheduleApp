@@ -11,7 +11,7 @@ const Calendar = () => {
   return (
     <div className='calendar'>
     <h4 className='calendar-date'>Today is<span>{CurrentDate}</span></h4>
-    <div>
+    <div className='calendar-main'>
       {currentMonth.map((row, i) => (
         <React.Fragment key={i}>
           <div className="row" key={i}>

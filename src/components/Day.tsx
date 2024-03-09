@@ -1,5 +1,4 @@
 import dayjs from 'dayjs'
-import '../../dist/css/App.css'
 
 type DayProps = {
     day: dayjs.Dayjs,

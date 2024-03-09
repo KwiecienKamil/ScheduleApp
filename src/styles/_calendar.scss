@@ -1,7 +1,7 @@
 .calendar {
     margin: 3rem 0 3rem 0;
     width: 100%;
-    flex-direction: column;
+    
     .calendar-date {
         display: flex;
         align-items: center;
@@ -14,11 +14,16 @@
             color: $primaryText;
         }
     }
+    .calendar-main {
+        border-radius: 20px;
+        overflow: hidden;
+    }
     .row {
         background-color: #fff;
         width: 100%;
         display: flex;
         justify-content: space-between;
+        
     }
     .singleDay {
         width: 100px;
