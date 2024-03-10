@@ -1,0 +1,22 @@
+.musicPlayer {
+    padding: 1rem;
+    background-color: $sidebar;
+    border-radius: 20px;
+    .musicPlayer-songInfo {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .musicPlayer-songInfo-img{
+        width: 50px;
+    }
+    .musicPlayer-songInfo-info {
+        h6 {
+            font-size: 1rem;
+        }
+        p {
+            font-size: .8rem; 
+        }
+    }
+}
+

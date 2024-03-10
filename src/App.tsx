@@ -1,10 +1,8 @@
-import React, { useState } from 'react'
-import {getMonth} from './utils/currentMonth'
-import Day from './components/Day';
 import '../src/styles/App.scss'
 import Sidebar from './components/Sidebar';
-import Calendar from './components/Calendar';
 import MainTasks from './components/MainTasks';
+import SidebarRight from './components/SidebarRight';
+
 
 function App() {
 
@@ -14,6 +12,7 @@ function App() {
       <div className="dashboard">
         <Sidebar />
         <MainTasks />
+        <SidebarRight />
       </div>
     </main>
     </>
