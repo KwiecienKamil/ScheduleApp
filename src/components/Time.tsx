@@ -11,8 +11,8 @@ const Time = () => {
     }, 1000)
     
   return (
-    <div>
-      <p className="current-time">{currentTime}</p>
+    <div className="time">
+      <p className="time-current-time">{currentTime}</p>
     </div>
   )
 }

@@ -4,6 +4,7 @@
 @import './mainTasks';
 @import './SidebarRight';
 @import './musicPayer';
+@import './time';
 
 * {
     padding: 0;
@@ -22,5 +23,6 @@ main {
     height: 100vh;
     @include flexCenter();
     position: relative;
+    color: $text;
 }
 

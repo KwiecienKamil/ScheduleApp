@@ -5,18 +5,45 @@
     .musicPlayer-songInfo {
         display: flex;
         align-items: center;
-        justify-content: space-between;
-    }
-    .musicPlayer-songInfo-img{
-        width: 50px;
-    }
-    .musicPlayer-songInfo-info {
-        h6 {
-            font-size: 1rem;
+        gap: 1rem;
+        .musicPlayer-songInfo-img{
+            width: 50px;
+            height: 40px;
+            border-radius: 20px;
         }
-        p {
-            font-size: .8rem; 
+        .musicPlayer-songInfo-info {
+            h6 {
+                font-size: 1rem;
+            }
+            p {
+                font-size: .8rem; 
+            }
         }
     }
+    .musicPlayer-nav {
+        padding: 1rem 0 0 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        .musicPlayer-nav-btn {
+            font-size: 2.5rem;
+            border: none;
+            cursor: pointer;
+            &:hover {
+                color: $primary;
+                transition: .3s ease-in;
+            }
+        }
+        #musicPlayer-nav-btn-play {
+            font-size: 3rem;
+            color: $primaryText;
+            &:hover {
+                color: $primaryTextHover;
+                transition: .3s ease-in;
+            }
+        }
+    }
+   
 }
 

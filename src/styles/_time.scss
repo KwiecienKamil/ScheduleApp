@@ -1,0 +1,11 @@
+.time {
+    padding: 1rem;
+    background-color: $sidebar;
+    border-radius: 20px;
+    .time-current-time {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: $primaryText;
+        text-align: center;
+    }
+}
