@@ -1,43 +1,54 @@
-import axios from "axios";
-import { FC, useEffect, useState } from "react";
+import { LuWind } from "react-icons/lu";
+import { useEffect, useState } from "react";
 
-type WeatherProps = {
-  name: string | undefined;
-  temp: number | undefined;
-  pressure: number | undefined;
-};
+
 
 const Weather = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<any>([]);
   const apiKey = import.meta.env.VITE_API_KEY;
-  const url =
-    "https://api.openweathermap.org/data/2.5/weather?q=Warsaw&&units=metric&appid=01b3faed431e892073487aa390b3e1a4";
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=Warsaw&&units=metric&appid=${import.meta.env.VITE_API_KEY}`
+  
+
+
 
   useEffect(() => {
     const fetchWeather = async () => {
       setIsLoading(true);
-      const res = await fetch(url);
-      const resData = (await res.json()) as WeatherProps[];
-      setData(resData);
-      setIsLoading(false);
+      try {
+        const res = await fetch(url);
+        const resData = await res.json();
+        setData(resData);
+      } catch (err: any) {
+        console.log(err);
+      } finally {
+        setIsLoading(false);
+      }
     };
 
     fetchWeather();
   }, []);
 
-  console.log(data);
-  if(isLoading) {
-    return <div className="weather">Loading...</div>
+
+  if (isLoading) {
+    return <div className="weather">Loading...</div>;
   }
 
   return (
     <div className="weather">
       <h3>{data.name}</h3>
-      <p>{`${data.main.temp} °C`}</p>
-      <p>{`${data.main.pressure} hPa`}</p>
+      {data.name ? <p>{`${data.main.temp} °C`}</p> : ""}
+      {data.name ? <p>{`${data.main.pressure} hPa`}</p> : ""}
+      {data.name ? (
+        <div className="wind">
+          <p>{`${data.wind.speed} km/h`}</p>
+          <LuWind />
+        </div>
+      ) : (
+        ""
+      )}
     </div>
-  )
+  );
 };
 
 export default Weather;

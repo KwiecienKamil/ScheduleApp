@@ -1,4 +1,5 @@
-import { IoAdd } from "react-icons/io5"
+
+import { FaRegUserCircle } from "react-icons/fa";
 
 
 const Profile = () => {
@@ -9,7 +10,7 @@ const Profile = () => {
         <p>My settings</p>
         </div>
         <span className="profile-icon">
-            <IoAdd />
+            <FaRegUserCircle size={20}/>
             </span>
     </section>
   )
