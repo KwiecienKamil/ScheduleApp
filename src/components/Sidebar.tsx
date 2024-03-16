@@ -3,7 +3,7 @@ import Calendar from "./Calendar"
 import Logo from "./Logo"
 import WeeklyReminders from "./WeeklyReminders"
 
-type SidebarProps = {
+export type SidebarProps = {
   setOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
 

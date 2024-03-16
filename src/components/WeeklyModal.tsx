@@ -7,7 +7,7 @@ type ModalProps = {
     setOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Modal : FC<ModalProps> = ({setOpenModal}) => {
+const WeeklyModal : FC<ModalProps> = ({setOpenModal}) => {
     const dropIn = {
         hidden: {
           x: "-100vh",
@@ -68,4 +68,4 @@ const Modal : FC<ModalProps> = ({setOpenModal}) => {
   )
 }
 
-export default Modal
+export default WeeklyModal

@@ -3,22 +3,25 @@ import Sidebar from './components/Sidebar';
 import MainTasks from './components/MainTasks';
 import SidebarRight from './components/SidebarRight';
 import { useState } from 'react';
-import Modal from './components/Modal';
+import Modal from './components/WeeklyModal';
 import { AnimatePresence } from 'framer-motion';
+import LoginRegisterModal from './components/LoginRegisterModal';
 
 
 function App() {
-  const [openModal, setOpenModal] = useState(false);
+  const [openWeeklyModal, setOpenWeeklyModal] = useState(false);
+  const [openLoginRegisterModal, setOpenLoginRegisterModal] = useState(false);
 
   return (
     <>
     <main>
       <div className="dashboard">
-        <Sidebar setOpenModal={setOpenModal}/>
+        <Sidebar setOpenModal={setOpenWeeklyModal}/>
         <MainTasks />
-        <SidebarRight />
+        <SidebarRight setOpenModal={setOpenLoginRegisterModal}/>
         <AnimatePresence>
-        {openModal && <Modal setOpenModal={setOpenModal}/>}
+        {openWeeklyModal && <Modal setOpenModal={setOpenWeeklyModal}/>}
+        {openLoginRegisterModal && <LoginRegisterModal setOpenModal={setOpenLoginRegisterModal}/>}
         </AnimatePresence>
       </div>
     </main>

@@ -4,7 +4,7 @@ import song2 from '../assets/Red Hot Chili Peppers - Otherside [Official Music V
 export const MusicData = [
     {
         Artist: "Logic",
-        title: "Logic - 5AM",
+        title: "5AM",
         img: "https://www.rollingstone.com/wp-content/uploads/2019/03/logic-album-review.jpg",
         mp3: song1
     },
