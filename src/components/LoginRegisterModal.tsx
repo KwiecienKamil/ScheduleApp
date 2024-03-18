@@ -1,10 +1,14 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import { SidebarProps } from "./Sidebar";
 import Backdrop from "./Backdrop";
 import { motion } from "framer-motion";
 import { IoCloseSharp } from "react-icons/io5";
+import axios from "axios";
 
 const LoginRegisterModal: FC<SidebarProps> = ({ setOpenModal }) => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  
   const appear = {
     hidden: {
       opacity: 0,
@@ -23,6 +27,13 @@ const LoginRegisterModal: FC<SidebarProps> = ({ setOpenModal }) => {
       opacity: 0,
     },
   };
+
+  const handleSubmit:React.FormEventHandler<HTMLFormElement> = (event) => {
+    event.preventDefault();
+    axios.post('http://localhost:80/api/user/save', {username, password})
+    
+    
+  }
   return (
     <Backdrop>
       <motion.div
@@ -43,14 +54,14 @@ const LoginRegisterModal: FC<SidebarProps> = ({ setOpenModal }) => {
             <IoCloseSharp />
           </motion.button>
         </div>
-        <form className="weekly-form">
+        <form className="weekly-form" onSubmit={handleSubmit}>
           <div className="login-form-data">
             <label>Username</label>
-            <input type="text" />
+            <input type="text" onChange={(e) => setUsername(e.target.value)}/>
           </div>
           <div className="login-form-data">
             <label>Password</label>
-            <input type="password" />
+            <input type="password" onChange={(e) => setPassword(e.target.value)}/>
           </div>
           <motion.button
             type="submit"
