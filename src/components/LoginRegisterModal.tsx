@@ -30,8 +30,7 @@ const LoginRegisterModal: FC<SidebarProps> = ({ setOpenModal }) => {
 
   const handleSubmit:React.FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
-    axios.post('http://localhost:80/api/user/save', {username, password})
-    
+    axios.post('http://localhost/api/addUser.php', {username, password})
     
   }
   return (
