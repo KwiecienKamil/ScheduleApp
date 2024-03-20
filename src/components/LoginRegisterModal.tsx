@@ -28,9 +28,16 @@ const LoginRegisterModal: FC<SidebarProps> = ({ setOpenModal }) => {
     },
   };
 
+
+
   const handleSubmit:React.FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
-    axios.post('http://localhost/api/addUser.php', {username, password})
+    if(username.length > 3 && password.length > 0) {
+      axios.post('http://localhost/api/addUser.php', {username, password})
+    }else {
+      alert("Min. username and password length is 3")
+    }
+
     
   }
   return (

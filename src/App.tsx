@@ -6,11 +6,17 @@ import { useState } from 'react';
 import Modal from './components/WeeklyModal';
 import { AnimatePresence } from 'framer-motion';
 import LoginRegisterModal from './components/LoginRegisterModal';
+import axios from 'axios';
 
 
 function App() {
   const [openWeeklyModal, setOpenWeeklyModal] = useState(false);
   const [openLoginRegisterModal, setOpenLoginRegisterModal] = useState(false);
+
+
+  axios.get("http://localhost/api/index.php").then(response => {
+    console.log(response.data);
+  })
 
   return (
     <>
