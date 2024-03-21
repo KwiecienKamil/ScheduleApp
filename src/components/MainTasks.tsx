@@ -15,7 +15,9 @@ const MainTasks = () => {
         <div className="mainTasks-tasks">
             <MainTask icon="⏰" title="Wake up buddy" hour="7:00" description=""/>
             <MainTask icon="🙆" title="Morning Yoga" hour="8:00" description=""/>
-            <MainTask icon="⏰" title="Daily Workout" hour="9:00" description="Squat 10x3, Push up 10x3"/>
+            <MainTask icon="🦾" title="Daily Workout" hour="9:00" description="Squat 10x3, Push up 10x3"/>
+            <MainTask icon="👨‍💻" title="Coding Session" hour="11:00" description=""/>
+            <MainTask icon="🚿" title="Cold Shower" hour="15:00" description=""/>
         </div>
     </section>
   )

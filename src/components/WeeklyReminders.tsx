@@ -15,8 +15,8 @@ const WeeklyReminders : FC<WeeklyReminderProps> = ({setOpenModal}) => {
         <h2>Weekly Pinned</h2>
         <a href="#">View all</a>
       </div>
-      <WeeklyRemindersTask icon="👨‍⚕️" title="Call doctor" date="15 Mar 2024" />
-      <WeeklyRemindersTask icon="👨‍⚕️" title="Call doctor" date="15 Mar 2024" />
+      <WeeklyRemindersTask icon="👨‍⚕️" title="Call doctor" date="25 Apr 2024" />
+      <WeeklyRemindersTask icon="💲" title="Pay taxes" date="30 Apr 2024" />
       <motion.button 
       onClick={() => setOpenModal(true)}
       whileHover={{scale: 1.01}}
