@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 const Weather = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [data, setData] = useState<any>([]);
-  const apiKey = import.meta.env.VITE_API_KEY;
   const url = `https://api.openweathermap.org/data/2.5/weather?q=Warsaw&&units=metric&appid=${import.meta.env.VITE_API_KEY}`
   
 

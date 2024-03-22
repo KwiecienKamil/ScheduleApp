@@ -3,11 +3,12 @@ import React from 'react'
 type WeeklyRemindersTaskProps = {
   icon: string,
   title: string,
-  date: string
+  date: string,
+  id: number
 }
-const WeeklyRemindersTask = ({icon,title, date}:WeeklyRemindersTaskProps) => {
+const WeeklyRemindersTask = ({icon,title, date, id}:WeeklyRemindersTaskProps) => {
   return (
-    <div className='weekly-reminders-task'>
+    <div className='weekly-reminders-task' key={id}>
         <div className='weekly-reminders-task-icon'>
         <span>{icon}</span>
         </div>

@@ -3,7 +3,8 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit"
 export interface WeeklyPin {
     id: number,
     description: string,
-    date: string
+    date: string,
+    emoji: string
 }
 
 
@@ -21,9 +22,10 @@ export const WeeklyPinSlice = createSlice({
     reducers: {
         addWeeklyPin:(state, action) => {
             state.WeeklyPins.push({
-                id: Math.floor(Math.random() * 999),
+                id: action.payload.id,
                 description: action.payload.description,
-                date: action.payload.date
+                date: action.payload.date,
+                emoji: action.payload.emoji
             })
         }
     }

@@ -1,7 +1,8 @@
 import WeeklyRemindersTask from "./WeeklyRemindersTask";
 import { IoAddOutline } from "react-icons/io5";
 import { motion } from "framer-motion";
-import { FC } from "react";
+import { FC, useState } from "react";
+import { useAppDispatch, useAppSelector } from "../store/store";
 
 
 type WeeklyReminderProps = {
@@ -9,14 +10,18 @@ type WeeklyReminderProps = {
 }
 
 const WeeklyReminders : FC<WeeklyReminderProps> = ({setOpenModal}) => {
+
+  const selector = useAppSelector((state) => state.WeeklyPin.WeeklyPins);
+
   return (
     <section className="weeklyReminders">
       <div className="weeklyReminders-header">
         <h2>Weekly Pinned</h2>
         <a href="#">View all</a>
       </div>
-      <WeeklyRemindersTask icon="👨‍⚕️" title="Call doctor" date="25 Apr 2024" />
-      <WeeklyRemindersTask icon="💲" title="Pay taxes" date="30 Apr 2024" />
+      {selector.map((weeklyTask) => (
+        <WeeklyRemindersTask id={weeklyTask.id} icon={weeklyTask.emoji} date={weeklyTask.date} title={weeklyTask.description}/>
+      ))}
       <motion.button 
       onClick={() => setOpenModal(true)}
       whileHover={{scale: 1.01}}
