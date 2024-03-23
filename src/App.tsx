@@ -6,12 +6,14 @@ import { useState } from 'react';
 import Modal from './components/WeeklyModal';
 import { AnimatePresence } from 'framer-motion';
 import LoginRegisterModal from './components/LoginRegisterModal';
+import TodaysTasksModal from './components/TodaysTasksModal';
 // import axios from 'axios';
 
 
 function App() {
   const [openWeeklyModal, setOpenWeeklyModal] = useState(false);
   const [openLoginRegisterModal, setOpenLoginRegisterModal] = useState(false);
+  const [openTodaysTasksModal, setOpenTodaysTasksModal] = useState(false);
 
  
   
@@ -25,11 +27,12 @@ function App() {
     <main>
       <div className="dashboard">
         <Sidebar setOpenModal={setOpenWeeklyModal}/>
-        <MainTasks />
+        <MainTasks setOpenTodaysTasksModal={setOpenTodaysTasksModal}/>
         <SidebarRight setOpenModal={setOpenLoginRegisterModal}/>
         <AnimatePresence>
         {openWeeklyModal && <Modal setOpenModal={setOpenWeeklyModal}/>}
         {openLoginRegisterModal && <LoginRegisterModal setOpenModal={setOpenLoginRegisterModal}/>}
+        {openTodaysTasksModal && <TodaysTasksModal setOpenModal={setOpenTodaysTasksModal}/>}
         </AnimatePresence>
       </div>
     </main>

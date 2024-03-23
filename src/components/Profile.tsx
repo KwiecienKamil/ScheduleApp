@@ -3,7 +3,7 @@ import { FaRegUserCircle } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { SidebarProps } from "./Sidebar";
 
-const Profile = ({setOpenModal}:SidebarProps) => {
+const Profile = ({ setOpenModal }: SidebarProps) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   return (
     <section>
@@ -19,7 +19,11 @@ const Profile = ({setOpenModal}:SidebarProps) => {
         </div>
       ) : (
         <div className="profile-login-register">
-          <motion.button onClick={() => setOpenModal(true)} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.9 }}>
+          <motion.button
+            onClick={() => setOpenModal(true)}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.9 }}
+          >
             Login / Register
           </motion.button>
         </div>

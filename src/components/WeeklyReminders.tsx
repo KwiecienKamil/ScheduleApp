@@ -13,15 +13,20 @@ const WeeklyReminders : FC<WeeklyReminderProps> = ({setOpenModal}) => {
 
   const selector = useAppSelector((state) => state.WeeklyPin.WeeklyPins);
 
+  console.log(selector);
+  
+
   return (
     <section className="weeklyReminders">
       <div className="weeklyReminders-header">
         <h2>Weekly Pinned</h2>
         <a href="#">View all</a>
       </div>
+      <div className="weeekly-reminders-tasks">
       {selector.map((weeklyTask) => (
         <WeeklyRemindersTask id={weeklyTask.id} icon={weeklyTask.emoji} date={weeklyTask.date} title={weeklyTask.description}/>
       ))}
+      </div>
       <motion.button 
       onClick={() => setOpenModal(true)}
       whileHover={{scale: 1.01}}

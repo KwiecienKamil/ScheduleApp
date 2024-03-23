@@ -2,17 +2,19 @@ import React, { FC, useState } from 'react'
 import Backdrop from './Backdrop';
 import {motion} from 'framer-motion'
 import { IoCloseSharp } from "react-icons/io5";
-import { addWeeklyPin } from '../store/features/WeeklyPinsSlice';
+import { addTodaysTask, addWeeklyPin } from '../store/features/WeeklyPinsSlice';
 import { useAppDispatch} from '../store/store';
 
 type ModalProps = {
     setOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const WeeklyModal : FC<ModalProps> = ({setOpenModal}) => {
+const TodaysTasksModal : FC<ModalProps> = ({setOpenModal}) => {
   const [desc, setDesc] = useState("");
-  const [date, setDate] = useState("");
-  const [emoji, setEmoji] = useState("");
+  const [title, setTitle] = useState("");
+  const [icon, setIcon] = useState("");
+  const [hour, setHour] = useState("");
+  
 
   const dispatch = useAppDispatch()
 
@@ -39,13 +41,14 @@ const WeeklyModal : FC<ModalProps> = ({setOpenModal}) => {
 
       const handleDispatch = (e:React.SyntheticEvent) => {
         e.preventDefault()
-        if(desc.length > 0 && date.length > 0) {
+        if(title.length > 0) {
         dispatch(
-          addWeeklyPin({
-            id: Math.floor(Math.random() * 999),
+          addTodaysTask({
+            id: Math.floor(Math.random() * 9999),
             description: desc,
-            date: date,
-            emoji: emoji,
+            hour: hour,
+            title: title,
+            icon: icon
           })
         );
         }else {
@@ -63,7 +66,7 @@ const WeeklyModal : FC<ModalProps> = ({setOpenModal}) => {
       exit="exit"
       >
         <div className="WeeklyModal">
-        <h2>Add new Weekly pin</h2>
+        <h2>Add Today's Tasks</h2>
         <motion.button
          whileHover={{scale: 1.05}}
          whileTap={{scale: 0.9}}
@@ -74,15 +77,19 @@ const WeeklyModal : FC<ModalProps> = ({setOpenModal}) => {
         <form className='weekly-form'>
           <div className="weekly-form-data">
           <label>Title</label>
-          <input type="text" placeholder='E.g. Call mom' onChange={(e) => setDesc(e.target.value)}/>
+          <input type="text" placeholder='E.g. Call mom' onChange={(e) => setTitle(e.target.value)}/>
           </div>
           <div className="weekly-form-data">
           <label>Date</label>
-          <input type="date" onChange={(e) => setDate(e.target.value)}/>
+          <input type="time" onChange={(e) => setHour(e.target.value)}/>
           </div>
           <div className="weekly-form-data">
-          <label>Emoji</label>
-          <input type="text" placeholder='Paste single emoji' onChange={(e) => setEmoji(e.target.value)}/>
+          <label>Icon</label>
+          <input type="text" placeholder='Paste single emoji' onChange={(e) => setIcon(e.target.value)}/>
+          </div>
+          <div className="weekly-form-data">
+          <label>More info</label>
+          <input type="text" onChange={(e) => setDesc(e.target.value)}/>
           </div>
           <a href="https://getemoji.com/" target='blank'>Get emoji</a>
           <motion.button
@@ -101,4 +108,4 @@ const WeeklyModal : FC<ModalProps> = ({setOpenModal}) => {
   )
 }
 
-export default WeeklyModal
+export default TodaysTasksModal
