@@ -50,11 +50,11 @@
 }
 .weeekly-reminders-tasks  {
     max-height: 310px;
-    overflow: scroll;
 }
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 4px;
     border-radius: 100%;
+
   };
   ::-webkit-scrollbar-thumb {
     background: $primary;

@@ -88,8 +88,8 @@ const TodaysTasksModal : FC<ModalProps> = ({setOpenModal}) => {
           <input type="text" placeholder='Paste single emoji' onChange={(e) => setIcon(e.target.value)}/>
           </div>
           <div className="weekly-form-data">
-          <label>More info</label>
-          <input type="text" onChange={(e) => setDesc(e.target.value)}/>
+          <label>More</label>
+          <input type="text" placeholder='(optional)' onChange={(e) => setDesc(e.target.value)}/>
           </div>
           <a href="https://getemoji.com/" target='blank'>Get emoji</a>
           <motion.button

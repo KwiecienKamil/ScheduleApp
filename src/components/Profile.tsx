@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { SidebarProps } from "./Sidebar";
 
 const Profile = ({ setOpenModal }: SidebarProps) => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
   return (
     <section>
       {isLoggedIn ? (

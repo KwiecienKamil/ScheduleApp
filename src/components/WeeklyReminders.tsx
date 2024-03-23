@@ -24,7 +24,7 @@ const WeeklyReminders : FC<WeeklyReminderProps> = ({setOpenModal}) => {
       </div>
       <div className="weeekly-reminders-tasks">
       {selector.map((weeklyTask) => (
-        <WeeklyRemindersTask id={weeklyTask.id} icon={weeklyTask.emoji} date={weeklyTask.date} title={weeklyTask.description}/>
+        <WeeklyRemindersTask weeklyTask={weeklyTask} id={weeklyTask.id} icon={weeklyTask.emoji} date={weeklyTask.date} title={weeklyTask.description}/>
       ))}
       </div>
       <motion.button 

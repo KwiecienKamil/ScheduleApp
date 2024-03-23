@@ -31,7 +31,7 @@ const MainTasks: FC<MainTasksProps> = ({ setOpenTodaysTasksModal }) => {
       </div>
       <div className="mainTasks-tasks">
         {selector.map((task) => (
-          <MainTask title={task.title} hour={task.hour} icon={task.icon} description={task.description} />
+          <MainTask task={task} title={task.title} hour={task.hour} icon={task.icon} description={task.description} />
         ))}
       </div>
     </section>
