@@ -10,8 +10,6 @@ type MainTasksProps = {
 
 const MainTasks: FC<MainTasksProps> = ({ setOpenTodaysTasksModal }) => {
   const selector = useAppSelector((state) => state.WeeklyPin.TodaysTasks);
-
-  console.log(selector);
   
   return (
     <section className="mainTasks">

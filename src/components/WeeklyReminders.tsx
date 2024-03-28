@@ -13,8 +13,6 @@ const WeeklyReminders : FC<WeeklyReminderProps> = ({setOpenModal}) => {
 
   const selector = useAppSelector((state) => state.WeeklyPin.WeeklyPins);
 
-  console.log(selector);
-  
 
   return (
     <section className="weeklyReminders">
@@ -31,13 +29,15 @@ const WeeklyReminders : FC<WeeklyReminderProps> = ({setOpenModal}) => {
       onClick={() => setOpenModal(true)}
       whileHover={{scale: 1.01}}
       whileTap={{scale: 0.9}}
-      className="weekly-reminders-task">
-        <div className="weekly-reminders-task-icon">
+      className="weekly-reminders-task" id="addNewWeekly">
+       <div className="flexWithGap">
+       <div className="weekly-reminders-task-icon">
           <span>{<IoAddOutline />}</span>
         </div>
         <div className="weekly-reminders-task-info">
           <h3>Add new weekly pin</h3>
         </div>
+       </div>
       </motion.button>
     </section>
   );
