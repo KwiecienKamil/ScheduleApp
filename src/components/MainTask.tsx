@@ -32,14 +32,7 @@ const MainTask = ({ icon, title, hour, description, task }: MainTaskProps) => {
         >
           <IoIosRemoveCircle className="mainTasks-remove-btn-icon"/>
         </motion.button>
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.9 }}
-          onClick={() => dispatch(removeTodaysTask(task))}
-          className="mainTasks-remove-btn"
-        >
-          <IoIosRemoveCircle className="mainTasks-remove-btn-icon"/>
-        </motion.button>
+      
       </div>
     </div>
   );

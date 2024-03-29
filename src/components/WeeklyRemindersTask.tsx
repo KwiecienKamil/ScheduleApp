@@ -13,11 +13,9 @@ type WeeklyRemindersTaskProps = {
   weeklyTask: WeeklyPin
 }
 const WeeklyRemindersTask = ({icon,title, date, id, weeklyTask}:WeeklyRemindersTaskProps) => {
-  const [doneTask, setDoneTask] = useState(false)
   const dispatch = useAppDispatch()
   return (
-    <div className={doneTask ? 'weekly-reminders-task' : 'weekly-reminders-task-done'} key={id}>
-      <div className='flexWithGap'>
+    <div className='weekly-reminders-task' key={id}>
       <div className='weekly-reminders-task-icon'>
         <span>{icon}</span>
         </div>
@@ -25,16 +23,8 @@ const WeeklyRemindersTask = ({icon,title, date, id, weeklyTask}:WeeklyRemindersT
           <h3>{title}</h3>
           <p>{date}</p>
         </div>
-      </div>
+
        <div className='flexWithGap'>
-       <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.9 }}
-          onClick={() => setDoneTask(!doneTask)}
-          className="weekly-reminders-done-btn"
-        >
-          <MdDone/>
-        </motion.button>
        <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.9 }}
