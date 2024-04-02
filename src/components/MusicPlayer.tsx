@@ -5,9 +5,11 @@ import { MdOutlinePauseCircleFilled } from "react-icons/md";
 import { MdOutlineSkipPrevious } from "react-icons/md";
 import { IoMdPlayCircle } from "react-icons/io";
 import { MdOutlineSkipNext } from "react-icons/md";
+import {motion} from "framer-motion"
 
 const MusicPlayer = () => {
   const [play, setPlay] = useState(false);
+  const [newSong, setNewSong] = useState("");
   const songRef = useRef<HTMLAudioElement>(null);
 
   const toggleAudio = () => {
@@ -62,6 +64,18 @@ const MusicPlayer = () => {
         </button>
       </div>
       <audio ref={songRef} src={MusicData[0].mp3} />
+      <div>
+        <label>Add song to playlist</label>
+        <input
+          type="file"
+          className="musicPlayer-input"
+          accept="audio/mp3"
+          onChange={(e) => setNewSong(e.target.value)}
+        />
+        <motion.button className="musicPlayer-addSong" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.9 }}>
+          Add
+        </motion.button>
+      </div>
     </div>
   );
 };
