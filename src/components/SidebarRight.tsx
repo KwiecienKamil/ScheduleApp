@@ -9,7 +9,6 @@ const SidebarRight: FC<SidebarProps> = ({setOpenModal}) => {
   return (
     <div className='sidebarRight'>
       <Profile setOpenModal={setOpenModal}/>
-      <MusicPlayer />
       <Time />
       <Weather />
     </div>
